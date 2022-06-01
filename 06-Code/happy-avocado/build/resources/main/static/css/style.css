@@ -1,0 +1,53 @@
+body {
+  padding-top: 60px;
+  padding-color: grey;
+  height: 853px;
+  background-image: url("Ejemplo7.jpg");
+  width: 1280px;
+  background-repeat:no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  background-size: 100%;
+  font-size: 1.5em;
+  color: #0a1d41;
+  background-color: transparent;
+
+}
+.starter-template {
+  padding: 60px 80px;
+  text-align: center;
+  tect-color: blue;
+}
+.btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #4CAF50;
+}
