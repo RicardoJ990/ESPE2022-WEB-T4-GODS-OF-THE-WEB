@@ -8,7 +8,7 @@ var app = express()
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
-app.use("/users",EndPoints) //Creamos la url para el llamado de las uris
+app.use("/Happy-Avocado",EndPoints) //Creamos la url para el llamado de las uris
 
 mongoose.connect( //Establecemos conexion
     "mongodb+srv://grupo4nrc5450:grupo4nrc5450@clusterg4.q6pz6.mongodb.net/Happy_Avocado?retryWrites=true&w=majority", //pegamos el link de la base de datos

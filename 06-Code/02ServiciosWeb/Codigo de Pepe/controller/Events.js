@@ -24,7 +24,8 @@ const getEvent = (req, res) => { //Tenemos en cuenta los parametros de respuesta
 }
 
 const updateEvent = (req, res) => {
-    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent}, (err, evt)=>{
+    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent}, {Affair: req.body.Affair}, {Content: req.body.Content},
+        (err, evt)=>{
         err && res.status(500).send(err.message)
         res.status(200).send(evt)
     })
@@ -37,18 +38,10 @@ const deleteEvent = (req, res) => {
     })
 }
 
-let date = new Date();
-
 const dayEvent = (req, res) => {
-    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent}, (err, evt)=>{
-        var fecha1 = req.body.DateEvent;
-        var fecha2 = date.getDate();
-        var dayfecha = fecha2.diff(fecha1, 'days') + ' dias de diferencia';
-        <script src="http://momentjs.com/downloads/moment.min.js"></script>
-        Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent},{MissingDay: dayfecha},(err, evt)=>{
-            err && res.status(500).send(err.message)
-            res.status(200).send(evt)
-        })
+    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent},{Affair: req.body.Affair},{Content: req.body.Content},{MissingDay: " dias de diferencia"},(err, evt)=>{
+        err && res.status(500).send(err.message)
+        res.status(200).send(evt)
     })
 }
 
