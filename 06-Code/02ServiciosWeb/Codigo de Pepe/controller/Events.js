@@ -24,10 +24,9 @@ const getEvent = (req, res) => { //Tenemos en cuenta los parametros de respuesta
 }
 
 const updateEvent = (req, res) => {
-    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent}, {Affair: req.body.Affair}, {Content: req.body.Content},
-        (err, evt)=>{
-        err && res.status(500).send(err.message)
-        res.status(200).send(evt)
+    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent}, (err, evt)=>{
+            err && res.status(500).send(err.message)
+            res.status(200).send(evt)
     })
 }
 
