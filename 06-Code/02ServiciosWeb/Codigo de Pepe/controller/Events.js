@@ -38,7 +38,7 @@ const deleteEvent = (req, res) => {
 }
 
 const dayEvent = (req, res) => {
-    Evento.findOneAndUpdate({Name: req.body.Name},{DateEvent: req.body.DateEvent},{Affair: req.body.Affair},{Content: req.body.Content},{MissingDay: " dias de diferencia"},(err, evt)=>{
+    Evento.findOneAndUpdate({Name: req.body.Name},{MissingDay: " dias de diferencia"},(err, evt)=>{
         err && res.status(500).send(err.message)
         res.status(200).send(evt)
     })
